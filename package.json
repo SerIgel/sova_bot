@@ -1,0 +1,15 @@
+{
+  "name": "altair_bot",
+  "version": "0.1.0",
+  "description": "Bot for maintaining user roles ",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "@SerIgel#1337",
+  "license": "ISC"
+}
