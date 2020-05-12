@@ -9,6 +9,9 @@ module.exports = {
         if (!role) {
             return message.reply(`такой группы не существует`)
         }
+        role = message.guild.roles.cache.find(r => r.name === "Ученик")
+            member.roles.add(role)
 		message.member.roles.add(role)
 	},
 };
+        
