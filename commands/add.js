@@ -1,12 +1,13 @@
+const { admin } = require('../config.json');
 module.exports = {
     name: 'add',
     guildOnly: true,
-	description: 'Add group or smth',
+    description: 'Add group or smth',
 	async execute(message, args) {
 		if (args[0] === "group") {
             
-            if (message.member.id != "275243564030623744") {
-                return message.reply("эта команда доступна только <@275243564030623744>")
+            if (message.member.id != admin) {
+                return message.reply(`эта команда доступна только <@${admin}>`)
             }
 
             if (!args[1]) {return message.reply("укажите номер группы")}
