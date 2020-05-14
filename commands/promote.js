@@ -1,5 +1,6 @@
 module.exports = {
-	name: 'promote',
+    name: 'promote',
+    guildOnly: true,
     description: 'Promote member',
     args: true,
     usage: `<user>`,

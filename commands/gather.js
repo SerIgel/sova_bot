@@ -3,11 +3,13 @@ module.exports = {
     args: true,
     usage: `<номер группы | all | всех>`,
     alases: ["собрать"],
+    guildOnly: true,
     description: 'Gather people in current voice channel',
-    async execute(message, args) {
-        if (!message.member.roles.cache.find(r => r.name === "Преподаватель")) {
+    execute(message, args) {
+        let role = message.guild.roles.cache.find(r => r.name === "Преподаватель")
+        if (!message.member.roles.highest === role) {
             return message.reply(`вы должны быть преподавателем, чтобы собирать людей в канал`)
-        }
+        }  
         if (!message.member.voice.channel.id) {
             return message.reply(`вы должны быть в голосовом канале, чтобы собирать в него людей`)
         }
@@ -22,4 +24,3 @@ module.exports = {
         })
     },
 };
-//message.member.voice.channel.id

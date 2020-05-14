@@ -15,10 +15,10 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.login(token)
-    .catch(error => { console.log(`can't because of ${error}`) })
+    .catch(error => { console.log(`Can't because of ${error}`) })
 
 client.on("ready", async () => {
-    console.log(`logged in as ${client.user.tag}`)    
+    console.log(`Logged in as ${client.user.tag}`)    
 })
 
 client.on('message', message => {

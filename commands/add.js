@@ -1,9 +1,14 @@
 module.exports = {
-	name: 'add',
+    name: 'add',
+    guildOnly: true,
 	description: 'Add group or smth',
 	async execute(message, args) {
 		if (args[0] === "group") {
-            if (message.member.id != "275243564030623744") {message.reply("эта команда доступна только <@275243564030623744>")}
+            
+            if (message.member.id != "275243564030623744") {
+                return message.reply("эта команда доступна только <@275243564030623744>")
+            }
+
             if (!args[1]) {return message.reply("укажите номер группы")}
             let role = await message.guild.roles.create({
                 data: {

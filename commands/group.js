@@ -2,6 +2,7 @@ module.exports = {
 	name: 'group',
     description: 'Get a group role',
     args: true,
+    guildOnly: true,
     usage: '<номер группы>',
 	execute(message, args) {
         if (message.channel.id != "708339410370035743") {return message.delete();}

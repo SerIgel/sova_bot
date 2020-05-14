@@ -1,5 +1,6 @@
 module.exports = {
-	name: 'rgroup',
+    name: 'rgroup',
+    guildOnly: true,
     description: 'Remove a group role',
     args: true,
     usage: '<номер группы>',
