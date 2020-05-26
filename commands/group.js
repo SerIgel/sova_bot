@@ -1,3 +1,4 @@
+const {group_channel} = require("../config.json")
 module.exports = {
 	name: 'group',
     description: 'Get a group role',
@@ -5,7 +6,7 @@ module.exports = {
     guildOnly: true,
     usage: '<номер группы>',
 	execute(message, args) {
-        if (message.channel.id != "708339410370035743") {return message.delete();}
+        if (message.channel.id != group_channel) {return message.delete();}
         if (message.member.roles.cache.find(r => r.name.includes("Группа"))) {
             return message.reply("у вас не может быть более одной роли группы")
         }

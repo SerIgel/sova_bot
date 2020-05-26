@@ -7,7 +7,7 @@ module.exports = {
     description: 'Gather people in current voice channel',
     execute(message, args) {
         let role = message.guild.roles.cache.find(r => r.name === "Преподаватель")
-        if (message.member.roles.highest === role) {
+        if (message.member.roles.highest !== role) {
             return message.reply(`вы должны быть преподавателем, чтобы собирать людей в канал`)
         }
         if (!message.member.voice.channel.id) {

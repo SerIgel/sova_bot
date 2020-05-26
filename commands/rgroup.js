@@ -6,7 +6,7 @@ module.exports = {
     args: true,
     usage: '<номер группы>',
 	execute(message, args) {
-        if (message.channel.id != group_channel) {return message.delete();}
+        if (message.channel.id != group_channel) {  return message.delete();}
         let role = message.guild.roles.cache.find(r => r.name === "Группа "+args[0]);
         if (!role) {
             return message.reply(`такой группы не существует`)

@@ -1,7 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
@@ -15,10 +14,14 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection();
 
 client.login(token)
-    .catch(error => { console.log(`Can't because of ${error}`) })
+	.catch(error => { console.log(`Can't because of ${error}`) })
 
 client.on("ready", async () => {
-    console.log(`Logged in as ${client.user.tag}`)    
+	console.log(`Logged in as ${client.user.tag}`)
+})
+
+client.on("messageReactionAdd", (react, user) => {
+	if (react.emoji.name === "bruh") {user.send("bruh")}
 })
 
 client.on('message', message => {
@@ -26,7 +29,7 @@ client.on('message', message => {
 
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
-	
+
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 	if (!command) return;
@@ -71,5 +74,7 @@ client.on('message', message => {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 	}
+
+	
 
 });
