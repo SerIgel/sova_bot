@@ -10,10 +10,11 @@ module.exports = {
                 return message.reply(`эта команда доступна только <@${admin}>`)
             }
 
-            if (!args[1]) {return message.reply("укажите номер группы")}
+            if (!args[1]) {return message.reply("укажите имя группы")}
+            args.shift()
             let role = await message.guild.roles.create({
                 data: {
-                    name: `Группа ${args[1]}`
+                    name: args.join(' ')
                 },
             })
             role.setPosition(2, {relative: true})
@@ -21,8 +22,8 @@ module.exports = {
             let cat = await message.guild.channels.create(`Группа ${args[1]}`, {
                 type: "category"
             })
-            cat.updateOverwrite(cat.guild.roles.everyone, { VIEW_CHANNEL: false });
-            cat.updateOverwrite(role, { VIEW_CHANNEL: true })
+            await cat.updateOverwrite(cat.guild.roles.everyone, { VIEW_CHANNEL: false });
+            await cat.updateOverwrite(role, { VIEW_CHANNEL: true })
             message.guild.channels.create("чат", {
                 type: "text",
                 parent: cat.id,
