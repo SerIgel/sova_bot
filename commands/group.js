@@ -6,11 +6,13 @@ module.exports = {
     guildOnly: true,
     usage: '<номер группы>',
 	execute(message, args) {
-        if (message.channel.id != group_channel) {return message.delete();}
-        if (message.member.roles.cache.find(r => r.name.includes("Группа"))) {
+        if (!group_channel.includes(message.channel.id)) {return message.delete();}
+        
+        if (message.member.roles.cache.find(r => r.name.match(/^\d/))) {
             return message.reply("у вас не может быть более одной роли группы")
         }
-        let role = message.guild.roles.cache.find(r => r.name === "Группа "+args[0]);
+        if (!args.join(' ').match(/^\d/)) { return message.delete(); }
+        let role = message.guild.roles.cache.find(r => r.name === args.join(' '));
         if (!role) {
             return message.reply(`такой группы не существует`)
         }

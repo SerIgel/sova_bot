@@ -3,7 +3,7 @@ module.exports = {
     description: '/me from irc',
     args: true,
     execute(message, args) {
-        if (message.channel.id === "710444961425915937") {
+        if (message.channel.id === "710756065330987038") {
             if (args.join(" ") === "продолжает идти к успеху!") {
                 message.author.send("Следующее кодовое слово: ПОСТУПЛЮ")
             }
