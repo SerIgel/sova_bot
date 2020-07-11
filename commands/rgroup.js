@@ -4,7 +4,7 @@ module.exports = {
     guildOnly: true,
     description: 'Remove a group role',
     args: true,
-    usage: '<номер группы>',
+    usage: '<имя группы>',
 	execute(message, args) {
         if (!group_channel.includes(message.channel.id)) {  return message.delete();}
         let role = message.guild.roles.cache.find(r => r.name === args.join(' '));
