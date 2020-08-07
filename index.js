@@ -23,7 +23,7 @@ client.on("ready", async () => {
 })
 
 client.on("messageReactionAdd", (react, user) => {
-	if (react.emoji.name === "bruh") {user.send("bruh")}
+	if (react.emoji.name === "bruh") { user.send("bruh") }
 })
 
 client.on('message', message => {
@@ -77,4 +77,5 @@ client.on('message', message => {
 		message.reply('there was an error trying to execute that command!');
 	}
 
+	
 });

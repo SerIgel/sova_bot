@@ -8,8 +8,17 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm install"
   },
   "author": "@SerIgel#1337",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerIgel/sova_bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SerIgel/sova_bot/issues"
+  },
+  "homepage": "https://github.com/SerIgel/sova_bot#readme"
 }

@@ -18,7 +18,7 @@ module.exports = {
         if (!role) {
             return message.reply(`такой команды не существует`)
         }
-        if (role.members.size >= 4) { message.reply("в этой команде уже есть четыре человека"); return;}
+        if (role.members.size >= 5) { message.reply("в этой команде уже есть пять человек"); return;}
         message.member.roles.add(role)
     },
 };
