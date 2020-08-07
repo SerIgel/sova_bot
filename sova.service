@@ -1,0 +1,10 @@
+[Unit]
+Description=Bot SSS
+
+[Service]
+Type=simple
+User=sova
+ExecStart=/usr/bin/node /home/sova/github/sova_bot/index.js
+
+[Install]
+WantedBy=multi-user.target
