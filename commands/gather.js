@@ -16,12 +16,13 @@ module.exports = {
 
         message.guild.members.cache.forEach(member => {
             if (member.roles.cache.find(r =>
-                r.name === (['all', 'всех'].includes(args[0]) ? "Ученик" : ("Группа " + args[0])))) {
+                r.name === ("Ученик"))) {
                 
                     if (member.voice.channel) {
                     member.voice.setChannel(message.member.voice.channel.id);
                 }
             }
         })
+        
     },
 };
