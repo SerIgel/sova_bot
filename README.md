@@ -1,6 +1,6 @@
 # sova_bot
-## Setup:
-### Automatic (node v12.0.0 or newer required):
+## Setup (node v12.0.0 or newer required):
+### Automatic:
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/serigel/sova_bot/master/install.sh)"
 ```
