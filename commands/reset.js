@@ -1,8 +1,8 @@
 const { admin } = require("../config.json")
 module.exports = {
-    name: 'set',
+    name: 'reset',
     guildOnly: true,
-    description: 'Set something',
+    description: 'Reset teams',
     async execute(message, args) {
         message.guild.members.cache.forEach(async member => {
             let role = member.roles.cache.find(r => r.name.includes("Команда"))

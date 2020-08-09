@@ -1,4 +1,4 @@
-const { group_channel, bot } = require("../config.json")
+const { group_channel } = require("../config.json")
 module.exports = {
     name: 'team',
     description: 'Get a team role',
@@ -6,7 +6,7 @@ module.exports = {
     guildOnly: true,
     usage: '<номер команды>',
     execute(message, args) {
-        me = message.guild.members.cache.find(u => u.id === bot)
+        me = message.guild.members.cache.find(u => u.id === message.client.user.id)
         if (me.roles.cache.find(r => r.name.includes("game"))) {
             return message.reply("Игра уже началась! Если вы хотите сменить команду, обратитесь к преподавателю.")
         }

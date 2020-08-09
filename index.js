@@ -2,6 +2,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const { config } = require('process');
+const { measureMemory } = require('vm');
 const client = new Discord.Client();
 
 client.commands = new Discord.Collection();
@@ -76,5 +77,5 @@ client.on('message', message => {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 	}
-
+	
 });

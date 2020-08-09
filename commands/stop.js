@@ -1,4 +1,3 @@
-const { bot } = require("../config.json")
 module.exports = {
     name: 'stop',
     guildOnly: true,
@@ -10,7 +9,7 @@ module.exports = {
             return message.reply(`вы уже должны быть преподавателем или волонтёром, чтобы начинать или завершать игру.`)
         }
         let role = message.guild.roles.cache.find(r => r.name === "game");
-        me = message.guild.members.cache.find(u => u.id === bot)
+        me = message.guild.members.cache.find(u => u.id === message.client.user.id)
         me.roles.remove(role)
     }
 }
