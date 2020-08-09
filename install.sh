@@ -10,18 +10,18 @@ echo "Cloning from github"
 git clone https://github.com/SerIgel/sova_bot.git
 cd sova_bot
 touch ./config.json
-echo -ne "Input command prefix:"
+echo "Input command prefix:"
 read prefix
-echo -ne "Input your bot token:"
+echo "Input your bot token:"
 read token
-echo -ne "Specify admin who can do specific actions such as adding teams and stuff"
+echo "Specify admin who can do specific actions such as adding teams and stuff"
 read admin
-echo -ne "Input channel to take grouup roles in"
+echo "Input channel to take grouup roles in"
 read ch
 cat << EOF > ./config.json
 { 
     "prefix": "${prefix}", 
-    "discord_token": "${token}",
+    "token": "${token}",
     "admin": "${admin}",
     "group_channel": ["${ch}"]
 }
