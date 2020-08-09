@@ -12,7 +12,7 @@ npm install
 touch config.json
 ```
 Then open `config.json` in any editor and set your config as shown below
-Afterwards run `npm start`
+Afterwards run `npm start`  
 ### `config.json` structure:
 ```json
 {
