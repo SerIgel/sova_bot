@@ -1,7 +1,7 @@
 #!/bin/bash
 if which node > /dev/null
 then
-    echo "Node is insttaled, proceeding..."
+    echo "Node is instaled, proceeding..."
     else
     echo "You need to install node v12 or newer"
     exit
