@@ -1,6 +1,6 @@
 # sova_bot
 
-# This bot is deprecated, check out [SerIgel/sova-ts](https://github.com/SerIgel/sova-ts)
+## This bot is deprecated, check out [SerIgel/sova-ts](https://github.com/SerIgel/sova-ts)
 
 ## Setup (node v12.0.0 or newer required):
 ### Automatic:
